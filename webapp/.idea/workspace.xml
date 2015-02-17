@@ -22,36 +22,14 @@
     <favorites_list name="webapp" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4500303">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="routes.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes.js">
+          <file leaf-file-name="socket.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/chapter8/socket.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1430">
-                  <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#47#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="working.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/working.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1475">
-                  <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="socket.html" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/socket.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5817308" vertical-offset="0" max-vertical-offset="924">
-                  <caret line="22" column="62" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="62" />
+                <state vertical-scroll-proportion="0.26223776" vertical-offset="279" max-vertical-offset="1728">
+                  <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -61,21 +39,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="socket.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/socket.js">
+          <file leaf-file-name="data.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/chapter8/js/data.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8717949" vertical-offset="198" max-vertical-offset="1584">
-                  <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="data.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/data.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="203">
-                  <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+                <state vertical-scroll-proportion="0.027554534" vertical-offset="0" max-vertical-offset="871">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -103,6 +71,7 @@
         <option value="$PROJECT_DIR$/socket.html" />
         <option value="$PROJECT_DIR$/socket.js" />
         <option value="$PROJECT_DIR$/js/data.js" />
+        <option value="$PROJECT_DIR$/chapter8/js/data.js" />
       </list>
     </option>
   </component>
@@ -163,6 +132,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -426,21 +413,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
+    <entry file="file://$PROJECT_DIR$/socket.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1430">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.5817308" vertical-offset="0" max-vertical-offset="924">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/working.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1475">
+        <state vertical-scroll-proportion="0.11655012" vertical-offset="0" max-vertical-offset="1475">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7692308" vertical-offset="0" max-vertical-offset="1430">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -452,18 +447,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/socket.html">
+    <entry file="file://$PROJECT_DIR$/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5817308" vertical-offset="0" max-vertical-offset="924">
-          <caret line="22" column="62" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.858783" vertical-offset="198" max-vertical-offset="1584">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/socket.js">
+    <entry file="file://$PROJECT_DIR$/chapter8/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8717949" vertical-offset="198" max-vertical-offset="1584">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.26223776" vertical-offset="279" max-vertical-offset="1728">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapter8/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027554534" vertical-offset="0" max-vertical-offset="871">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
