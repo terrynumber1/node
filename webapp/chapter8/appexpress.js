@@ -22,7 +22,7 @@ var callback2 = function(rq, re) {
 // use bodyParser(), methodOVerride() for every environment
 appExpress.configure(function() {
 	appExpress.use( express.bodyParser() );
-	appExpress.use( express.methodOverride() );
+	appExpress.use( express.methodOverride() ); // RESTful service
 });
 
 // development environment, use logger() and errorHandler to dump exception
