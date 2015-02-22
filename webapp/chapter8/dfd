@@ -1,0 +1,4 @@
+wget http://opsvm3:3000/horse/create \
+--header='content-type: application/json' \
+--post-data='{"css_map":{"color":"#ddd"},"name":"Ed"}'\
+-O -
