@@ -10,8 +10,6 @@
 */
 /*global */
 
-// ------------ BEGIN MODULE SCOPE VARIABLES --------------
-'use strict';
 //var mongodb = require('mongodb');
 //var mongoServer = new mongodb.Server('localhost', mongodb.Connection.DEFAULT_PORT);
 //var dbHandle = new mongodb.Db('spa', mongoServer, {safe: true});
@@ -22,11 +20,12 @@
 //var checkSchema;
 //var JSV = require('JSV').JSV;
 //var validator = JSV.createEnvironment();
+//var makeMongoId = mongodb.ObjectID;
 
-var configRoutes;
-var makeMongoId = mongodb.ObjectID;
+// ------------ BEGIN MODULE SCOPE VARIABLES --------------
+'use strict';
 var crud = require('./crud');
-
+var configRoutes;
 // ------------- END MODULE SCOPE VARIABLES ---------------
 
 // --------------- BEGIN UTILITY METHODS ------------------

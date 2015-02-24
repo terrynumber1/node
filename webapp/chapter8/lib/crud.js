@@ -47,10 +47,48 @@ checkType = function ( obj_type ) {
 };
 
 // use CONSTRUCT as our method name, CREATE is a Javascript reserve word
-constructObj = function () {
+constructObj = function ( obj_type, obj_map, callback ) {
+    var type_check_map = checkType( obj_type );
+    if( type_check_map ) {
+        callback(type_check_map);
+        return;
+    }
+
+    checkSchema( obj_type, obj_map, function( error_list ) {
+            if( error_list.length === 0 ) {
+                dbHandle.collection( obj_type, function( outer_error, collection) {
+                    var options_map = { safe: true };
+
+                    collection.insert( obj_map, options_map, function( inner_error, result_map ) {
+                            callback( result_map );
+                        }
+
+                    );
+                } );
+            } else {
+                callback({
+                    error_msg: 'Input document not valid',
+                    error_list: error_list
+                });
+            }
+        }
+    );
 };
 
-readObj = function () {
+readObj = function( obj_type, find_map, fields_map, callback ) {
+  var type_check_map = checkType( obj_type );
+
+  if( type_check_map ) {
+      callback(type_check_map);
+      return;
+  }
+
+  dbHandle.collection( obj_type, function( outer_error, collection ) {
+      collection.find(find_map, fields_map).toArray( function( inner_error, map_list ) {
+        callback( map_list );
+      } );
+  } );
+
 };
 
 updateObj = function () {
