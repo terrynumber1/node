@@ -1,25 +1,37 @@
-var flight = require('./flight');
 
-var pdxlax = {
-	number: 847,
-	origin: 'PDX',
-	destination: 'LAX'
-};
+/**
+ * Module dependencies.
+ */
 
-var pl = flight(pdxlax);
+var express = require('express');
+var routes = require('./routes');
+var http = require('http');
+var path = require('path');
 
-pl.triggerDepart();
+var app = express();
 
-console.log(pl.getInformation());
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
 
-var ausdca = {
-	number: 382,
-	origin: 'AUS',
-	destination: 'DCA'
-};
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
 
-var ad = flight(ausdca);
+app.get('/flight/list', routes.list);
+app.get('/flight/:number', routes.flight);
+app.put('/flight/:number/arrived', routes.arrived);
 
-console.log(ad.getInformation());
 
-console.log(pl.getInformation());
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
