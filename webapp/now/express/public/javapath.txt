@@ -1,0 +1,9 @@
+C:\ProgramData\Oracle\Java\javapath;
+
+C:\Program Files (x86)\Java\jre1.8.0_25\bin
+
+%SystemRoot%\system32;%SystemRoot%;
+%SystemRoot%\System32\Wbem;
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;
+C:\Program Files (x86)\QuickTime\QTSystem\;
+C:\Program Files\nodejs\
