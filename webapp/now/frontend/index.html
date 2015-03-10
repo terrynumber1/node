@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="./jquery-1.11.2.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+
+    <!--Add Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+
+    <!--Use Bootstrap CSS classes-->
+    <button class="btn btn-default"
+            data-placement="buttom"
+            title="tool tip message"
+            >Default Button</button>
+
+    <script>
+        $(function() { // on document ready
+            $('button').tooltip(); // add tooltip to all button
+        })();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
