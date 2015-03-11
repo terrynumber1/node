@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="./jquery-1.11.2.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+
+</head>
+<body>
+
+    <button>Hello</button>
+    <button class="btn btn-default"
+            data-placement="buttom"
+            title="tool tip message"
+            >Hello</button>
+
+
+    <script>
+        $(function() {
+            $('button').tooltip(); // add tool tip for all button
+        })();
+    </script>
+</body>
+</html>
