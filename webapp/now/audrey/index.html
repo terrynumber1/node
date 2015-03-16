@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Audrey St. Clair</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div class="container">
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Bootstrap theme</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <!--Main jumbotron for primary message-->
+        <div class="jumbotron pushdown">
+            <h1>Audrey St. Clair</h1>
+            <p>Some message in here</p>
+        </div>
+
+        <!--Wells-->
+        <div class="page-header">
+            <h1>Wells</h1>
+        </div>
+        <div class="well">
+            <p>
+                lor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non
+                magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+
+        <!--Carousel-->
+        <div class="page-header">
+            <h1>Carousel</h1>
+        </div>
+        <div id="bestCarsCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#bestCarsCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#bestCarsCarousel" data-slide-to="1"></li>
+            <li data-target="#bestCarsCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="images/piano_head_tilt.gif">
+                <div class="carousel-caption">
+                    <h3>Car 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur ...</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/piano_mirror.gif">
+                <div class="carousel-caption">
+                    <h3>Car 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur ...</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/applying_blush.gif">
+                <div class="carousel-caption" >
+                    <h3>Car 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur ...</p>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#bestCarsCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#bestCarsCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+        <div class="page-header">
+            <h3>Panels</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Panel title</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Panel title</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+
+
+        </div>
+
+    </div>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
