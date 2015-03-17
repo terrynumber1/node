@@ -1,11 +1,13 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-
 var app = express();
 
+var http = require('http');
+var httpServer = http.Server(app);
+
+app.use(express.static(__dirname));
+
 app.get('/', function(req, res) {
-    res.send('it is here');
+    res.sendfile(__dirname);
 });
 
-app.listen(3000);
-console.log('Server running');
+app.listen(5000);
