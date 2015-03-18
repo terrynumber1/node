@@ -10,4 +10,4 @@ app.get('/', function(req, res) {
     res.sendfile(__dirname);
 });
 
-app.listen(5000);
+app.listen(3000);
