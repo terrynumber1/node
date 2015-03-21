@@ -1,5 +1,6 @@
 angular.module("sportsStore")
-    .constant("dataUrl", "http://ubuntu14:5500/products") //http://ubuntu14:5500/test404error
+    .constant("dataUrl", "http://opsvm3:5500/products") //http://ubuntu14:5500/test404error
+//    .constant("dataUrl", "http://ubuntu14:5500/products")
     .controller("sportsStoreCtrl", function($scope, $http, dataUrl) {
 
         $scope.data = {};
