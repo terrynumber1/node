@@ -8,8 +8,23 @@
         <link href="./bootstrap-theme.css" rel="stylesheet" />
 
         <script>
-            angular.module("sportsStore", ["customFilters"]);
+            angular.module("sportsStore", ["customFilters", "ngRoute"])
+                .config(function($routeProvider) {
+                        $routeProvider.when("/checkout", {
+                            templateUrl: "/views/checkoutSummary.html"
+                        });
+
+                        $routeProvider.when("/products", {
+                            templateUrl: "/views/productList.html"
+                        });
+
+                        $routeProvider.otherwise({
+                            templateUrl: "/views/productList.html"
+                        });
+                });
+
         </script>
+
         <script src="./controllers/sportsStore.js"></script>
         <script src="./filters/customFilters.js"></script>
         <script src="./controllers/productListControllers.js"></script>
@@ -32,7 +47,7 @@
         </div>
 
         <ng-include src=" './views/productList.html' "></ng-include>
-
+        <!--<ng-view />-->
 
     </body>
 
