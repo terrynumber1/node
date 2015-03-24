@@ -8,7 +8,7 @@
         <link href="./bootstrap-theme.css" rel="stylesheet" />
 
         <script>
-            angular.module("sportsStore", ["customFilters", "ngRoute"])
+            angular.module("sportsStore", ["customFilters", "cart","ngRoute"])
                 .config(function($routeProvider) {
                         $routeProvider.when("/checkout", {
                             templateUrl: "/views/checkoutSummary.html"
@@ -28,6 +28,7 @@
         <script src="./controllers/sportsStore.js"></script>
         <script src="./filters/customFilters.js"></script>
         <script src="./controllers/productListControllers.js"></script>
+        <script src="./components/cart/cart.js"></script>
 
         <script src="./ngmodules/angular-route.js"></script>
 
@@ -38,6 +39,7 @@
         <!--Navigation Bar-->
         <div class="navbar navbar-inverse">
             <a class="navbar-brand" href="#">SPORTS STORE</a>
+            <cart-summary></cart-summary>
         </div>
 
         <!--Error Message-->
@@ -46,9 +48,9 @@
             <a href="http://ubuntu14:5000/app.html">Click here to reload</a>
         </div>
 
-        <!--<ng-include src=" './views/productList.html' "></ng-include>-->
+        <ng-include src=" './views/productList.html' "></ng-include>
 
-        <ng-view></ng-view>
+        <!--<ng-view></ng-view>-->
 
     </body>
 
