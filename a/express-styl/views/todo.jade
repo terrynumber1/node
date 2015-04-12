@@ -1,12 +1,11 @@
-h1 new todo list
+div#contact
+    h1 Send an email
+    form(action="/myaction" method="post")
 
-form(action="/save", method="post")
-    p
-        label Enter a new todo item
-        input(type="text", placeholder="placeholder", name="todo-text")
-    p
-        input(type="submit", value="save")
+        p
+            input(type="text", name="name", placeholder="Enter your name")
+        p
+            input(type="text", name="name2", placeholder="Enter name2")
+        p
+            input(type="submit" value="This is a submit button")
 
-div.row
-    div.panel.panel-default sdfdf
-        div.panel-heading hello
