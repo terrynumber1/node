@@ -1,3 +1,7 @@
+//http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
+//http://mherman.org/blog/2014/12/31/node-and-mongoose-a-primer/#.VSo1I_nF98E
+//https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=form+express+mongo+without+jade
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
