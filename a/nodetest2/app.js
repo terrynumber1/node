@@ -1,21 +1,12 @@
-//http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
-//http://mherman.org/blog/2014/12/31/node-and-mongoose-a-primer/#.VSo1I_nF98E
-//https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=form+express+mongo+without+jade
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-// NEW CODE
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
-
-// Make our db accessible to our router
-
+// Database
+var mongo = require('mongoskin');
+var db = mongo.db('mongodb://localhost:27017/nodetest2', {native_parser:true});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -34,15 +25,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// NEW CODE
-// Make our database accessible to our router
-// Wrapped our database object into every request!!! don't need another app.use statement for POST
+// **
+// Make our database accessible to our various http requests
 app.use(function (req, res, next) {
     req.db = db;
     next();
 });
 
-app.use('/', routes);
+
+app.use('/', routes);   // routes/index.js
 app.use('/users', users);
 
 // catch 404 and forward to error handler

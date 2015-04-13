@@ -1,0 +1,11 @@
+extends layout
+block content
+    h1.
+        User List
+    ul
+        each asdf in userlist
+            li
+                strong #{asdf.username}
+                i #{asdf.email}
+    a(href="http://opsvm3.turner.com:3000/newuser") Add User
+

@@ -1,0 +1,9 @@
+extends layout
+block content
+    h1= title
+    form#formAddUser(name="adduser", method="post", action="/adduser")
+        input#inputUserName(type="text", placeholder="enter username", name="username")
+        input#inputUserEmail(type="text", placeholder="enter email", name="email")
+        button#btnSubmit(type="submit") submit
+    br
+    a(href="http://opsvm3.turner.com:3000/userlist") User List
