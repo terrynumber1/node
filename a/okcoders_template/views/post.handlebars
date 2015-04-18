@@ -1,0 +1,13 @@
+<h2>post.handlebars</h2>
+<!--<p>{{posts.[0].title}}</p>-->
+
+
+<ul>
+    {{#each posts}}
+        <li>
+            <h2>{{this.title}}</h2>
+            <h4>{{this.author}}</h4>
+            <p>{{this.body}}</p>
+        </li>
+    {{/each}}
+</ul>

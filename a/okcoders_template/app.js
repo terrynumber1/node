@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-//var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -30,6 +30,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
+
 app.get('/', function (req, res) {
     var link1 = req.url;
 
@@ -54,39 +56,34 @@ app.get('/heartbeat', function (req, res) {
     res.send('you requested /hearbeat');
 });
 
-
 // GET /posts, show all posts
 app.get('/posts', function (req, res) {
 //    res.send('showing all post');
 
-    var blogposts = require('./blogposts.js');
-    // Call the function 'all' in blogposts.js
-    var allposts1 = blogposts.all();
+    var posts1 = [
+        {
+            title: "Building web application is boring",
+            author: "The boring man",
+            body: "There is nothing to learn from it."
+        },
+        {
+            title: "Using Template with Handlebars",
+            author: "Handle dude",
+            body: "Handlebars is better than Jade."
+        },
+        {
+            title: "I like hot cheerleaders.",
+            author: "Chill man",
+            body: "I want 3 of them."
+        }
+    ];
 
     // post.handlebars
     res.render('post', {
 //        posts: posts1[0].title
           // variable posts in post.handlebars /view
-          posts: allposts1
+          posts: posts1
     });
-});
-
-// GET /posts/:id, display a specific post
-app.get('/posts/:id', function (req, res) {
-    var userid = req.params.id;
-    var url1 = req.url;
-
-//    res.send('you requested post with id: ' + userid);
-
-    var blogposts = require('./blogposts.js');
-    var post11 = blogposts.find(userid);
-
-    // postwithid.handlebars
-    res.render('postwithid', {
-        url1: url1,
-        post1: post11
-    })
-
 });
 
 // GET /posts/new, show form for creating new post
@@ -97,6 +94,12 @@ app.get('/posts/new', function (req, res) {
 // POST /posts, create a new post
 app.post('/posts', function (req, res) {
     res.send('posting new data to the server');
+});
+
+// GET /posts/:id, display a specific post
+app.get('/posts/:id', function (req, res) {
+    var userid = req.params.id;
+    res.send('you requested post with id: ' + userid);
 });
 
 // GET /posts/:id/edit, return an HTML form for editing a post
