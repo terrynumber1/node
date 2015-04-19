@@ -89,6 +89,27 @@ app.get('/posts/:id', function (req, res) {
 
 });
 
+var request = require('request');
+
+app.get('/weather', function (req, res) {
+
+    request.get('http://api.openweathermap.org/data/2.5/weather?q=georgia,%20us', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log( JSON.parse(body) );
+
+            var weatherdatausa = JSON.parse(body);
+
+            res.render('weather', {
+                message1: weatherdatausa.sys.message,
+                country1: weatherdatausa.sys.country,
+                sunrise1: weatherdatausa.sys.sunrise,
+            });
+        }
+    });
+
+});
+
+
 // GET /posts/new, show form for creating new post
 app.get('/posts/new', function (req, res) {
     res.send('HTML form for creating new post');
