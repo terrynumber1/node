@@ -70,7 +70,7 @@ app.get('/heartbeat', function (req, res) {
 });
 
 
-// GET /posts, show all posts from blogposts.js
+// GET /posts, show all posts
 app.get('/posts', function (req, res) {
 //    res.send('showing all post');
 
@@ -120,35 +120,6 @@ app.get('/weather', function (req, res) {
                 sunrise1: weatherdatausa.sys.sunrise,
             });
         }
-    });
-
-});
-
-// MONGO SECTION =================================================
-// mongoblog.js, create Schema(table structure), create model object
-var mongoposts = require('./mongoblog.js');
-
-// GET /mongoposts, get all posts from MongoDB
-app.get('/mongoposts', function (req, res) {
-    var theurl = req.url;
-
-    mongoposts.find( {} ).exec(function (err, results) {
-        res.render('mongoposts', {
-            title: theurl,
-            mongoposts: results
-        });
-
-//        console.log(mongoposts);
-
-    });
-});
-
-app.get('/mongoposts/:id', function (req, res) {
-
-    mongoposts.findById(id, function (err, found) {
-        res.render('mongopostsid', {
-            mongopostsid: found
-        });
     });
 
 });

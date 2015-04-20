@@ -1,0 +1,28 @@
+<h4 class="btn btn-danger">mongoposts.handlebars</h4>
+<p>
+    {{title}}
+</p>
+
+
+{{#each mongoposts}}
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h4> {{this.title}}, {{this.id}}, {{this._id}} </h4>
+                    <p> {{this.author}} </p>
+                </div>
+
+                <div class="panel-body"> {{this.body}} </div>
+
+            </div>
+        </div>
+
+    </div>
+{{/each}}
+
+
+10970509
+10970439
