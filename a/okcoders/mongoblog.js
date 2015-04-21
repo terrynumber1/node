@@ -10,8 +10,7 @@ var blogSchema = new Schema({
 });
 
 //show collections
-//var post = mongoose.model('database collection name', Schema name);
-
+//var post = mongoose.model('database collection's name', Schema name);
 var mongoposts = mongoose.model('posts', blogSchema);
 
 module.exports = mongoposts;

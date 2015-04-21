@@ -1,15 +1,26 @@
-<h4 class="btn btn-danger">mongopostsid.handlebars</h4>
+<div class="row">
+    <h4 class="btn btn-danger">mongopostsid.handlebars</h4>
+</div>
+
 
 <div class="row">
     <div class="col-xs-6">
         <div class="panel panel-default">
-            <div class="panel-heading">
 
+            <div class="panel-heading">
+                <h4> {{result.title}} </h4>
+                <p> {{result.author}} </p>
             </div>
 
             <div class="panel-body">
-
+                <p> {{result.body}} </p>
+                <p> _id: {{reqid}} </p>
+                <p> id: {{result.id}} </p>
+                <p>
+                    <a href="/mongoposts">Go Back</a>
+                </p>
             </div>
+
         </div>
     </div>
 </div>

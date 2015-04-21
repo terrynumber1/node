@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>PA Control Panel/Transfer Central</title>
+		<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper1 { width: 960px; height: 1080px; padding: 0; float: left; overflow: hidden; background-color: white; }
+		#wrapper2 { margin-left: 960px; height: 1080px; padding: 0; overflow: hidden; background-color: black; }
+		#pa-frame { width: 960px; height: 4000px; border: 0px; }
+		#pa-frame {
+			zoom: 1;
+		}
+		#xfer-frame { width: 960px; height: 4000px; border: 0px; }
+		#xfer-frame {
+			zoom: 1;
+		}
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			#pa-frame  { zoom: 1;  }
+			#xfer-frame  { zoom: 1;  }
+		}
+		</style>
+	</head>
+	<body>
+		<div style="width: 100%; overflow: hidden;">
+			<div id="wrapper1"><iframe id="pa-frame" src="http://opspa"></iframe></div>
+			<div id="wrapper2"><iframe id="xfer-frame" src="http://bcceng/tv/xfer.php?tv=1"></iframe></div>
+		</div>
+	</body>
+</html>

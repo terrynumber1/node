@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>BCC 6-Way Nagios Split</title>
+		<style type="text/css">
+			html, body {
+				height: 100%;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #000000;
+			}
+			.top, .bottom {
+				width: 100%;
+				height: 50%;
+			}
+			.nagios {
+				height: 99.5%;
+				width: 33.3%;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			<div class="nagios"><iframe src="http://best-alerts:3030/coreStms" style="border: 0; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe></div>
+			<div class="nagios"><iframe src="http://best-alerts:3030/bts" style="border: 0; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe></div>
+			<div class="nagios"><iframe src="http://best-alerts:3030/creativeSystems" style="border: 0; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe></div>
+		</div>
+		<div class="bottom">
+			<div class="nagios"><iframe src="http://best-alerts:3030/mis" style="border: 0; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe></div>
+			<div class="nagios"><iframe src="http://best-alerts:3030/newsInformation" style="border: 0; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe></div>
+			<div class="nagios"><iframe src="http://best-alerts:3030/dng" style="border: 0; height: 100%; width: 100%;" frameborder="0" scrolling="no"></iframe></div>
+		</div>
+	</body>
+</html>

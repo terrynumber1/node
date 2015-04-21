@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Schedule/Selenio Status</title>
+		<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper1 { width: 960px; height: 1080px; padding: 0; float: left; overflow: hidden; background-color: black; }
+		#wrapper2 { margin-left: 960px; height: 1080px; padding: 0; overflow: hidden; background-color: black; }
+		#schedule-frame { width: 1400px; height: 4000px; border: 0px; }
+		#schedule-frame {
+			zoom: 0.66;
+			-moz-transform: scale(0.66);
+			-moz-transform-origin: 0 0;
+			-o-transform: scale(0.66);
+			-o-transform-origin: 0 0;
+			-webkit-transform: scale(0.66);
+			-webkit-transform-origin: 0 0;
+		}
+		#selenio-frame { width: 1300px; height: 4000px; border: 0px; }
+		#selenio-frame {
+			zoom: 0.74;
+			-moz-transform: scale(0.74);
+			-moz-transform-origin: 0 0;
+			-o-transform: scale(0.74);
+			-o-transform-origin: 0 0;
+			-webkit-transform: scale(0.74);
+			-webkit-transform-origin: 0 0;
+		}
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			#schedule-frame  { zoom: 1;  }
+			#selenio-frame  { zoom: 1;  }
+		}
+		</style>
+	</head>
+	<body>
+		<div style="width: 100%; overflow: hidden;">
+			<div id="wrapper1"><iframe id="schedule-frame" src="http://bcceng/schedule"></iframe></div>
+			<div id="wrapper2"><iframe id="selenio-frame" src="http://ailtp-web:8080/proc_dashboard/cnnProcMon.html"></iframe></div>
+		</div>
+	</body>
+</html>

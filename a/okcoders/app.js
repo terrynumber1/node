@@ -144,14 +144,26 @@ app.get('/mongoposts', function (req, res) {
 });
 
 app.get('/mongoposts/:id', function (req, res) {
+    var reqid = req.params.id;
 
-    mongoposts.findById(id, function (err, found) {
+    mongoposts.findById( reqid ).exec( function (err, result) {
         res.render('mongopostsid', {
-            mongopostsid: found
+            result: result,
+            reqid: reqid
         });
     });
 
+    /*
+    res.render('mongopostsid', {
+        reqid: reqid
+
+    });
+    */
+
 });
+
+
+// MONGO SECTION =================================================
 
 
 // GET /posts/new, show form for creating new post

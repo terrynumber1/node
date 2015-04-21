@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Remedy+CAR Monitoring</title>
+		<script src="js/jquery.min.js"></script>
+		<style type="text/css">
+			html, body {
+				height: 100%;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: black;
+				color: white;
+			}
+			table {
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				font-size: 70px;
+				font-family: "Lucida Grande", Verdana, "Lucida Sans Unicode", Arial, sans-serif;
+			}
+			#remedy, #car {
+				width: 100%;
+				height: 50%;
+			}
+			#remedy td {
+				width: 50%;
+			}
+			#car td {
+				width: 25%;
+			}
+			.number {
+				font-size: 225px;
+			}
+			.green {
+				color: limegreen;
+				font-weight: bold;
+			}
+			.yellow {
+				color: yellow;
+				font-weight: bold;
+			}
+			.red {
+				color: red;
+				font-weight: bold;
+			}
+			.none {
+				color: white;
+				font-weight: normal;
+			}
+			.fire {
+				color: #fff;
+				text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="remedy">
+			<table>
+				<tr>
+					<td>New Tickets<br /><span class="number" id="unassigned">?</span></td>
+					<td>Assigned Tickets<br /><span class="number" id="open">?</span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="car">
+			<table>
+				<tr>
+					<td>Dom Raw<br /><span class="number" id="domraw">?</span></td>
+					<td>Dom Rejected<br /><span class="number" id="domrej">?</span></td>
+					<td>Intl Raw<br /><span class="number" id="intlraw">?</span></td>
+					<td>Intl Rejected<br /><span class="number" id="intlrej">?</span></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			function parse(document) {
+				var spotsList = [];
+				$(document).find("count").each(function() {
+					spotsList[spotsList.length] = $(this).attr('value');
+				});
+				$("#domraw").html(spotsList[0]);
+				$("#domraw").removeClass().addClass(colorize(spotsList[0]));
+				$("#domrej").html(spotsList[1]);
+				$("#domrej").removeClass().addClass(colorize(spotsList[1]));
+				$("#intlraw").html(spotsList[2]);
+				$("#intlraw").removeClass().addClass(colorize(spotsList[2]));
+				$("#intlrej").html(spotsList[3]);
+				$("#intlrej").removeClass().addClass(colorize(spotsList[3]));
+			}
+			function getStatus() {
+				$.ajax({
+					url: '../carstatus/carstatus_count.xml',
+					dataType: "xml",
+					success: parse,
+					error: function(){
+						alert("Error: Something went wrong");
+					}
+				});
+			}
+			function getTickets() {
+				$.get('gettickets.php', function(response){
+					var responseArray = response.split(",");
+					$('#unassigned').html(responseArray[0]);
+					$("#unassigned").removeClass().addClass(colorize(responseArray[0]));
+					$('#open').html(responseArray[1]);
+					$("#open").removeClass().addClass(colorize(responseArray[1]));
+				});
+			}
+			function colorize(num) {
+				if (num > 0 && num < 10) {
+					return "number green";
+				} else if (num >= 10 && num < 20) {
+					return "number yellow";
+				} else if (num == "100+") {
+					return "number fire";
+				} else if (num >= 20) {
+					return "number red";
+				} else {
+					return "number none";
+				}
+			}
+			$(document).ready(function() {
+				getStatus();
+				getTickets();
+				setInterval(function() { getStatus(), getTickets() }, 60000);
+			});
+		</script>
+	</body>
+</html>

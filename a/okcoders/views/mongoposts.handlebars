@@ -11,11 +11,18 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading">
-                    <h4> {{this.title}}, {{this.id}}, {{this._id}} </h4>
+                    <h4> {{this.title}}, {{this.id}} </h4>
                     <p> {{this.author}} </p>
                 </div>
 
-                <div class="panel-body"> {{this.body}} </div>
+                <div class="panel-body">
+                    <p> {{this.body}} </p>
+                    <p>
+                        <!--<a href="http://opsvm3:3000/mongoposts/{{this._id}}"> {{this._id}} </a>-->
+                        _id:
+                        <a href="/mongoposts/{{this._id}}"> {{this._id}} </a>
+                    </p>
+                </div>
 
             </div>
         </div>
@@ -24,5 +31,5 @@
 {{/each}}
 
 
-10970509
-10970439
+
+

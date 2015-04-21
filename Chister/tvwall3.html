@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="refresh" content="120">
+		<title>RTS Trunking/TieWatch</title>
+		<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper1 { width: 960px; height: 980px; padding: 0; float: left; overflow: hidden; background-color: black; color: white; text-align: center; padding-top: 100px; font-size: 50px; font-family: "Arial", sans-serif; }
+		#wrapper2 { margin-left: 960px; height: 1080px; padding: 0; overflow: hidden; background-color: white; }
+		#trunking-frame { width: 800px; height: 600px; border: 0px; margin-left: 40px; margin-top: 100px; }
+		#tiewatch-frame { width: 960px; height: 4000px; border: 0px; }
+		#tiewatch-frame {
+			zoom: 1;
+		}
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			#trunking-frame  { zoom: 1;  }
+			#tiewatch-frame  { zoom: 1;  }
+		}
+		</style>
+	</head>
+	<body>
+		<div style="width: 100%; overflow: hidden;">
+			<div id="wrapper1">RTS Trunking<br /><img id="trunking-frame" src="http://nengweb-prod1/tksupv/screen.png"></iframe></div>
+			<div id="wrapper2"><iframe id="tiewatch-frame" src="http://cengweb1/tiewatch"></iframe></div>
+		</div>
+		<!-- <script>
+			window.setInterval("reloadIFrame();", 120000);
+			function reloadIFrame() {
+				var frame = document.getElementById("trunking-frame");
+				frame.src = frame.src;
+			}
+		</script> -->
+	</body>
+</html>
