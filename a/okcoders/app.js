@@ -134,7 +134,7 @@ app.get('/mongoposts', function (req, res) {
 
     mongoposts.find( {} ).exec(function (err, results) {
         res.render('mongoposts', {
-            title: theurl,
+            theurl: theurl,
             mongoposts: results
         });
 
@@ -159,6 +159,33 @@ app.get('/mongoposts/:id', function (req, res) {
 
     });
     */
+
+});
+
+
+
+app.get('/comments/:postid', function (req, res) {
+
+    var pid = req.params.postid;
+
+    res.render('comments/index', {
+        pid: pid
+    });
+});
+
+var Comment = require('./mongocomments.js');
+
+app.get('/mongocomments/:pid', function (req, res) {
+    var postid = req.params.pid;
+
+    Comment.find({ postID: postid }).exec(function (err, results) {
+
+            res.render('comment/comment', {
+                results: results,
+                postid: postid
+            });
+
+    });
 
 });
 
