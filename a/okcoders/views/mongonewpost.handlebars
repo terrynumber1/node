@@ -1,0 +1,41 @@
+<div class="row">
+
+    <h4>mongonewpost.handlebars</h4>
+
+    <form class="form" role="form" method="post" action="/mongonewpost">
+
+        <div class="form-group">
+            <label for="id">ID: </label>
+            <input type="text" class="form-control" id="id" placeholder="id holder"
+                   value="{{post.id}}"
+                   name="id"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="title">title: </label>
+            <input type="text" class="form-control" id="title" placeholder="title holder"
+                   name="title"
+                   value="{{post.title}}">
+        </div>
+
+        <div class="form-group">
+            <label for="body">body: </label>
+            <textarea rows="12" class="form-control" id="body"
+                      name="body"
+                      placeholder="body holder">{{post.body}}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="author">author: </label>
+            <input type="text" class="form-control" id="author"
+                   value="{{post.author}}"
+                   name="author"
+                   placeholder="author holder">
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+    </form>
+
+</div>

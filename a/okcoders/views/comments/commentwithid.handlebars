@@ -1,0 +1,26 @@
+<h4>Comments Page, commentwithid.handlebars</h4>
+
+{{#each results}}
+    <div class="row">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>_id: {{this._id}} </h4>
+            </div>
+            <div class="panel-body">
+                <p>body: {{this.body}} </p>
+                <h4>author: {{this.author}}</h4>
+                <h4>postid: {{this.postid}}</h4>
+
+            </div>
+        </div>
+
+    </div>
+{{/each}}
+
+<div class="row">
+    <a href="http://opsvm3:3000/mongoposts">go back</a>
+</div>
+
+
+

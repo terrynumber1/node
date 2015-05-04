@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({
     body: String,
-    author: String,
+    author: Number,
     postid: mongoose.Schema.Types.ObjectId
 });
 

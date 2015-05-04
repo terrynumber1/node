@@ -12,17 +12,17 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading">
-                    <h4> {{this.title}}, {{this.id}} </h4>
-                    <p> {{this.author}} </p>
+                    <h4> Title: {{this.title}}, ID: {{this.id}} </h4>
+                    <p> Author: {{this.author}} </p>
                 </div>
 
                 <div class="panel-body">
-                    <p> {{this.body}} </p>
+                    <p> Body: {{this.body}} </p>
                     <p>
                         <!--<a href="http://opsvm3:3000/mongoposts/{{this._id}}"> {{this._id}} </a>-->
                         _id:
                         <a href="/mongoposts/{{this._id}}"> {{this._id}} </a>
-                        comment:
+                        comment _id:
                         <a href="/mongocomments/{{this._id}}"> {{this._id}} </a>
                     </p>
                 </div>

@@ -1,0 +1,22 @@
+<h4>All Comments, comment.handlebars</h4>
+
+{{#each results}}
+<div class="row">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>_id: {{this._id}} </h4>
+        </div>
+        <div class="panel-body">
+            <p>body: {{this.body}} </p>
+            <h4>author: {{this.author}}</h4>
+            <h4>postid: {{this.postid}}</h4>
+
+            <a href="#"></a>
+        </div>
+    </div>
+
+</div>
+{{/each}}
+
+

@@ -162,29 +162,61 @@ app.get('/mongoposts/:id', function (req, res) {
 
 });
 
-
-
-app.get('/comments/:postid', function (req, res) {
-
-    var pid = req.params.postid;
-
-    res.render('comments/index', {
-        pid: pid
-    });
-});
+// MONGO COMMENTS SECTION =======================================
 
 var Comment = require('./mongocomments.js');
 
+// show all comments
+app.get('/mongocomments', function (req, res) {
+
+    Comment.find({}).exec(function (err, results) {
+        res.render('comments/allcomments', {
+            results: results
+        });
+
+        // DEBUG
+//        res.json(results);
+    });
+});
+
+// show comments for a specific post
 app.get('/mongocomments/:pid', function (req, res) {
     var postid = req.params.pid;
 
-    Comment.find({ postID: postid }).exec(function (err, results) {
+    Comment.find({ postid: postid }).exec(function (err, results) {
 
-            res.render('comment/comment', {
+            res.render('comments/commentwithid', {
                 results: results,
                 postid: postid
             });
 
+    });
+
+});
+
+// showing the form
+app.get('/mongonewpost/new', function (req, res) {
+
+    var post = new mongoposts();
+
+    // mongonewpost.handlebars
+    res.render('mongonewpost', {
+        title: "Creating New Blog Post",
+        post: post
+    });
+});
+
+// posting the form to MongoDB
+app.post('/mongonewpost', function (req, res) {
+//    console.log(req.body);
+    mongoposts.create(req.body, function (err, results) {
+        if (err) {
+            console.log('db error in POST: ' + err);
+        } else {
+//            res.send('post created');
+            var url = '/mongoposts/' + results._id;
+            res.redirect(url);
+        }
     });
 
 });
