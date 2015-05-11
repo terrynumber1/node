@@ -3,7 +3,9 @@ var path = require('path');
 //var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var mongoose = require('mongoose');
 
@@ -39,8 +41,22 @@ app.set('view engine', 'handlebars');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride (function (req, res) {
+    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+
+        // DEBUG
+        console.log(req.body);
+
+        // look in urlencoded POST bodies and delete it
+        var method = req.body._method;
+        delete req.body._method;
+        return method;
+    }
+}));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -128,7 +144,8 @@ app.get('/weather', function (req, res) {
 // mongoblog.js, create Schema(table structure), create model object
 var mongoposts = require('./mongoblog.js');
 
-// GET /mongoposts, get all posts from MongoDB
+// GET
+// show all posts from MongoDB
 app.get('/mongoposts', function (req, res) {
     var theurl = req.url;
 
@@ -161,8 +178,6 @@ app.get('/mongoposts/:id', function (req, res) {
     */
 
 });
-
-// MONGO COMMENTS SECTION =======================================
 
 var Comment = require('./mongocomments.js');
 
@@ -221,6 +236,67 @@ app.post('/mongonewpost', function (req, res) {
 
 });
 
+// Bring up edit form for a specific post
+app.get('/mongopost/:id/edit', function (req, res) {
+
+    var reqid = req.params.id;
+
+    mongoposts.findById(reqid).exec(function (err, result) {
+        res.render('mongopostedit', {
+            result: result,
+            reqid: reqid
+        });
+    });
+
+});
+
+// PUT
+app.put('/mongoposts/:id', function (req, res) {
+    console.log('>>>>>>>>>>>>> INSIDE app.put <<<<<<<<<<');
+    console.log(req.body);
+//    res.status(404).send('updated post: ' + req.params.id);
+
+    mongoposts.findById(req.params.id).exec(function (err, result) {
+        if (err) {
+            console.log('Error, cannot find post');
+        } else if (!result) {
+            console.log('No Post Found!');
+        } else {
+            // update post
+            result.title = req.body.title;
+            result.body = req.body.body;
+
+            console.log('>>>>>>>>>>>> DEBUG <<<<<<<<<<<<<');
+            console.log(result.title);
+            console.log(result.body);
+            console.log('>>>>>>>>>>>> DEBUG <<<<<<<<<<<<<');
+
+            result.save(function (err) {
+                console.log('?????????? ARE WE THERE YET ??????');
+
+                if (err) {
+                    console.log('database save error: ' + err);
+                } else {
+                    var url = 'http://opsvm3.turner.com:3000/mongoposts/' + req.params.id;
+                    res.redirect(url);
+                }
+            });
+        }
+    });
+
+});
+
+// delete a post
+app.delete('/mongodelete/:id', function (req, res) {
+    console.log(req.params.id);
+    mongoposts.findByIdAndRemove(req.params.id, function (err) {
+        if (err) {
+            console.log('Post delete error');
+        } else {
+            res.redirect('/mongoposts');
+        }
+    });
+});
 
 // MONGO SECTION =================================================
 

@@ -19,6 +19,22 @@
                 <p>
                     <a href="http://opsvm3.turner.com:3000/mongoposts">Go Back</a>
                 </p>
+
+                <p>
+                    <a href="http://opsvm3.turner.com:3000/mongopost/{{reqid}}/edit">Edit</a>
+                </p>
+
+                <p>
+
+                    <form method="POST" action="http://opsvm3.turner.com:3000/mongodelete/{{reqid}}"
+                          enctype="application/x-www-form-urlencoded">
+
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Delete this post</button>
+
+                    </form>
+
+                </p>
             </div>
 
         </div>

@@ -1,0 +1,55 @@
+<div class="row">
+
+    <h4>mongopostedit.handlebars</h4>
+
+    <form class="form" role="form" method="POST" action="http://opsvm3.turner.com:3000/mongoposts/{{reqid}}">
+
+        <!--this line is require for PUT and DELETE for Express middleware method-override-->
+        <input type="hidden" name="_method" value="put">
+
+        <div class="form-group">
+            <label for="mongoid">mongoID: </label>
+            <input type="text" class="form-control" id="mongoid"
+                   placeholder="mongoid holder"
+                   name="mongoid"
+                   value="{{reqid}}">
+        </div>
+
+        <div class="form-group">
+            <label for="id">ID: </label>
+            <input type="text" class="form-control" id="id"
+                   placeholder="id holder"
+                   name="id"
+                   value="{{result.id}}">
+        </div>
+
+        <div class="form-group">
+            <label for="title">title: </label>
+            <input type="text" class="form-control" id="title"
+                   placeholder="title holder"
+                   name="title"
+                   value="{{result.title}}">
+        </div>
+
+        <div class="form-group">
+            <label for="body">body: </label>
+            <textarea rows="12" class="form-control" id="body"
+                      placeholder="body holder"
+                      name="body">{{result.body}}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="author">author: </label>
+            <input type="text" class="form-control" id="author"
+                   placeholder="author holder"
+                   name="author"
+                   value="{{result.author}}">
+        </div>
+
+        <button type="submit" class="btn btn-default">bSubmit</button>
+
+    </form>
+
+    <a href="http://opsvm3.turner.com:3000/mongoposts">Go back</a>
+
+</div>
