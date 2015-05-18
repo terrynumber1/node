@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '--save', 'experss' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink /usr/bin/node
+5 warn package.json socket-chat-example@0.0.1 No repository field.
+6 warn package.json socket-chat-example@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'experss', null ]
+9 verbose cache add name=undefined spec="experss" args=["experss",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'experss',
+10 verbose parsed url   path: 'experss',
+10 verbose parsed url   href: 'experss' }
+11 silly lockFile e3ee467c-experss experss
+12 verbose lock experss /home/opsvm3user/.npm/e3ee467c-experss.lock
+13 silly lockFile e3ee467c-experss experss
+14 silly lockFile e3ee467c-experss experss
+15 verbose addNamed [ 'experss', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 60e4a22b-experss experss@
+18 verbose lock experss@ /home/opsvm3user/.npm/60e4a22b-experss.lock
+19 silly addNameRange { name: 'experss', range: '*', hasData: false }
+20 verbose request where is /experss
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 9a33f55c3b866e8c
+23 verbose url raw /experss
+24 verbose url resolving [ 'https://registry.npmjs.org/', './experss' ]
+25 verbose url resolved https://registry.npmjs.org/experss
+26 verbose request where is https://registry.npmjs.org/experss
+27 info trying registry request attempt 1 at 04:48:25
+28 http GET https://registry.npmjs.org/experss
+29 http 404 https://registry.npmjs.org/experss
+30 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=0',
+30 verbose headers   'content-length': '51',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   date: 'Mon, 18 May 2015 08:49:03 GMT',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   age: '0',
+30 verbose headers   connection: 'keep-alive',
+30 verbose headers   'x-served-by': 'cache-jfk1020-JFK',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1431938943.548517,VS0,VE80' }
+31 silly registry.get cb [ 404,
+31 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 silly registry.get     'content-type': 'application/json',
+31 silly registry.get     'cache-control': 'max-age=0',
+31 silly registry.get     'content-length': '51',
+31 silly registry.get     'accept-ranges': 'bytes',
+31 silly registry.get     date: 'Mon, 18 May 2015 08:49:03 GMT',
+31 silly registry.get     via: '1.1 varnish',
+31 silly registry.get     age: '0',
+31 silly registry.get     connection: 'keep-alive',
+31 silly registry.get     'x-served-by': 'cache-jfk1020-JFK',
+31 silly registry.get     'x-cache': 'MISS',
+31 silly registry.get     'x-cache-hits': '0',
+31 silly registry.get     'x-timer': 'S1431938943.548517,VS0,VE80' } ]
+32 silly lockFile 60e4a22b-experss experss@
+33 silly lockFile 60e4a22b-experss experss@
+34 error 404 404 Not Found: experss
+34 error 404
+34 error 404 'experss' is not in the npm registry.
+34 error 404 You should bug the author to publish it
+34 error 404 It was specified as a dependency of 'socket-chat-example'
+34 error 404
+34 error 404 Note that you can also install from a
+34 error 404 tarball, folder, or http url, or git url.
+35 error System Linux 3.16.0-30-generic
+36 error command "/usr/bin/node" "/usr/bin/npm" "install" "--save" "experss"
+37 error cwd /var/www/html/node/socketio
+38 error node -v v0.10.36
+39 error npm -v 1.4.28
+40 error code E404
+41 verbose exit [ 1, true ]

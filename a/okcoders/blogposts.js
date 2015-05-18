@@ -30,7 +30,7 @@ var posts = [
         id: 5,
         title: "The upside to being let go by Nokia",
         body: "During the years of Nokia's decline, culminating in the sale of its mobile phone division to Microsoft in September, thousands of workers were made redundant. But the ex-Nokians have now created hundreds of new companies - thanks partly to a very Finnish level of support from the employer to its departing staff.",
-        author: "http://www.bbc.co.uk/news/magazine-25965140"
+        author: "http://www.js.js.backup.bbc.co.uk/news/magazine-25965140"
     },
     {
         id: 6,

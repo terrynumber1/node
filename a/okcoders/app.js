@@ -240,6 +240,7 @@ app.post('/mongonewpost', function (req, res) {
 app.get('/mongopost/:id/edit', function (req, res) {
 
     var reqid = req.params.id;
+    // action="/update/{{reqid}}"
 
     mongoposts.findById(reqid).exec(function (err, result) {
         res.render('mongopostedit', {
@@ -251,6 +252,7 @@ app.get('/mongopost/:id/edit', function (req, res) {
 });
 
 // PUT
+// methodOverride middleware
 app.put('/mongoposts/:id', function (req, res) {
     console.log('>>>>>>>>>>>>> INSIDE app.put <<<<<<<<<<');
     console.log(req.body);
@@ -287,6 +289,7 @@ app.put('/mongoposts/:id', function (req, res) {
 });
 
 // delete a post
+// methodOverride middleware
 app.delete('/mongodelete/:id', function (req, res) {
     console.log(req.params.id);
     mongoposts.findByIdAndRemove(req.params.id, function (err) {
