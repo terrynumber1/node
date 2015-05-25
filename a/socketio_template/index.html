@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+
+    // data coming from APP.JS
+
+    // socket.emit('news', { hello: 'inside app.js in the server' } );
+    socket.on('name1', function (data) {
+        // web browser console
+        console.log(data);
+    });
+
+    socket.emit('name2', {
+        key: 'this code is inside index.html'
+    });
+
+</script>
+
+</body>
+</html>
