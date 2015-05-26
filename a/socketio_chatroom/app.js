@@ -66,7 +66,6 @@ io.on('connection', function (socket) {
             var stream = collection.find().sort().limit(10).stream();
 
 //            console.log(stream);
-
             stream.on('data', function (message) {
                 socket.emit('chat', message.content);
             });
