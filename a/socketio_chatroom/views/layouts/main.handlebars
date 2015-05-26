@@ -57,6 +57,26 @@
         key: 'this code is inside main.handlebars'
     });
 
+    // Pulling data from #message-box
+    $('#send-message-btn').click( function() {
+        var msg = $('#message-box').val();
+
+        // Sending data to HTTP server
+        socket.emit('chat', msg);
+
+        // Append a paragraph with message to DIV #messages
+        $('#messages').append( $('<p>').text(msg) );
+        // Clear DIV #messages-box
+        $('#messages-box').val('');
+
+        return false;
+    });
+
+    // Receiving message from the HTTP server.
+    socket.on('chat', function (msg) {
+        $('#messages').append($('<p>').text(msg));
+    });
+
 </script>
 
 </body>

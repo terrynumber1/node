@@ -27,7 +27,20 @@ server.listen(3000, function () {
 });
 
 // Socket.io pipeline between SERVER and WEB BROWSER
+// execute the call-back function for every 'connection' via WebSocket to our HTTP server
 io.on('connection', function (socket) {
+
+    console.log('a user just connected');
+
+    // web browser, socket.emit('name',{key:value})
+    socket.on('disconnect', function () {
+        console.log('a user just disconnected');
+    });
+
+    socket.on('chat', function (message) {
+        socket.broadcast.emit('chat', message);
+    });
+
     socket.emit('name1', {
         key: 'this code is inside app.js'
     });
