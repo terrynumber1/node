@@ -22,6 +22,25 @@ app.get('/', function (req, res) {
 
 });
 
+// Testing MongoDB driver,
+var mongo = require('mongodb').MongoClient;
+
+app.get('/mongo', function (req, res) {
+
+    mongo.connect('mongodb://localhost/todo1', function (err, dbConnectionObject) {
+
+        if (err) {
+            console.log('DATABASE CONNECTION ERROR: ' + err);
+        } else {
+            var collection = dbConnectionObject.collection('todocollection1');
+            var result = collection.find().stream();
+
+//            console.log(result);
+        }
+    });
+
+});
+
 server.listen(3000, function () {
     console.log('Express server is running at port 3000');
 });
@@ -37,9 +56,49 @@ io.on('connection', function (socket) {
         console.log('a user just disconnected');
     });
 
+    // display previous 10 mesasges when a user is connected to our server
+    mongo.connect('mongodb://localhost/chat1', function (err, dbConnectionObject) {
+
+        if (err) {
+            console.log('DATABASE CONNECTION ERROR: ' + err);
+        } else {
+            var collection = dbConnectionObject.collection('c1');
+            var stream = collection.find().sort().limit(10).stream();
+
+//            console.log(stream);
+
+            stream.on('data', function (message) {
+                socket.emit('chat', message.content);
+            });
+        }
+    });
+
+    // Received a message in 'chat' channel
     socket.on('chat', function (message) {
+
+        // insert chat message to MongoDB
+        mongo.connect('mongodb://localhost/chat1', function (err, dbConnectionObject) {
+            if (err) {
+                console.log('Database connection error: ' + err);
+            } else {
+                var collection = dbConnectionObject.collection('c1');
+                collection.insert({content: message}, function (err, o) {
+                    if (err) {
+                        console.warn(err.message);
+                    } else {
+                        console.log('chat message inserted into db: ' + message);
+                    }
+                });
+            }
+        });
+
+        // send chat message to all connected web browsers
         socket.broadcast.emit('chat', message);
     });
+
+
+
+
 
     socket.emit('name1', {
         key: 'this code is inside app.js'
