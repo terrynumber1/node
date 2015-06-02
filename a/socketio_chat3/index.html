@@ -35,15 +35,27 @@
 
 <body>
 
-    <div id="messagewindow"></div>
+    <div id="nicknamewrap">
+        <p>Enter your nickname</p>
+        <p id="nicknameerror">Nick name already chosen</p>
 
-    <form id="chatform">
+        <form>
+            <input type="text">
+            <input type="submit">
+        </form>
+    </div>
 
-        <input type="text" id="chatinput">
-        <input type="submit">
 
-    </form>
+    <div id="chatwrap">
+        <div id="messagewindow"></div>
 
+        <form id="chatform">
+
+            <input type="text" id="chatinput">
+            <input type="submit">
+
+        </form>
+    </div>
 
 
 <!-- Bootstrap core JavaScript
@@ -58,9 +70,15 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
 
-// $('document').ready(function () { });
+// $(document).ready(function () { });
 
 //var jq = jQuery.noConflict();
+
+$(document).ready( function() {
+
+    $('#nicknameerror').hide();
+
+});
 
 var socket = io.connect();
 

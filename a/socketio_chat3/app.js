@@ -19,8 +19,22 @@ server.listen(3000, function () {
 });
 
 
+var nicknames = [];
+
+var callback = function() {
+
+}
+
 io.on('connection', function (socket) {
     console.log('a user has connected');
+
+    socket.on('new user', function (data, callback) {
+        if ( nicknames.indexOf(data) != -1 ) {
+            callback(false);
+        } else {
+
+        }
+    });
 
     // receive message from browser on channel 'chat'
     socket.on('chat', function (data1) {
